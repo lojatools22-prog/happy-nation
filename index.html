@@ -282,6 +282,39 @@ input,select,textarea{border-radius:12px!important}
 .cert .seal{width:11.5cqw;height:11.5cqw;filter:drop-shadow(0 .4cqw .8cqw rgba(0,0,0,.5))}
 .cert-note{margin-top:16px}
 
+/* quem conduz em tela cheia */
+.who-full{position:relative;background:var(--ink);color:var(--bone);overflow:hidden}
+.who-full .wpic{position:relative;aspect-ratio:3/4;width:100%}
+.who-full .wbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.who-full .wshade{position:absolute;inset:0;background:linear-gradient(180deg,var(--ink) 0%,rgba(12,11,10,0) 18%,rgba(12,11,10,0) 72%,var(--ink) 100%)}
+.who-full .wtxt{position:relative;z-index:1;text-align:center;max-width:720px;margin:-6% auto 0;padding:0 22px 72px;display:flex;flex-direction:column;align-items:center}
+.who-full h2{font-size:clamp(28px,4vw,40px);margin:14px 0 14px}
+.who-full .b{color:#CFC6B8;font-size:16.5px;max-width:560px}
+.wstats{display:flex;justify-content:center;gap:clamp(22px,4vw,48px);margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);width:100%}
+.wstats b{display:block;font-family:Sora,sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(32px,3.6vw,44px);line-height:1;color:var(--gold2)}
+.wstats span{font-size:13.5px;color:var(--bmut)}
+@media(min-width:821px){
+  .who-full{min-height:min(100vh,900px);display:flex;align-items:center}
+  .who-full .wpic{position:absolute;top:0;right:0;bottom:0;width:58%;aspect-ratio:auto}
+  .who-full .wshade{background:linear-gradient(90deg,var(--ink) 0%,rgba(12,11,10,.8) 14%,rgba(12,11,10,.35) 34%,rgba(12,11,10,0) 55%),linear-gradient(180deg,var(--ink) 0%,rgba(12,11,10,0) 14%,rgba(12,11,10,0) 86%,var(--ink) 100%)}
+  .who-full .wtxt{margin:0;width:46%;max-width:none;padding:96px 4vw 96px max(5vw,40px)}
+}
+/* certificado claro trabalhado */
+.cert .frame{background:radial-gradient(120% 100% at 50% 40%,#FFFDF7 0%,#F8F1E2 70%,#EFE3C9 100%)!important}
+.cert .frame:after{background:repeating-radial-gradient(circle at 50% 50%,rgba(165,126,58,.07) 0 1px,transparent 1px 7px),repeating-linear-gradient(45deg,rgba(165,126,58,.035) 0 1px,transparent 1px 10px)!important}
+.cert .frame:before{border:1px solid rgba(150,112,44,.7)!important;box-shadow:inset 0 0 0 .5cqw #FBF6EA,inset 0 0 0 calc(.5cqw + 1px) rgba(150,112,44,.45)}
+.cert .ct1{background:linear-gradient(180deg,#C99B45,#8A6420 70%,#6E4F18)!important;-webkit-background-clip:text!important;background-clip:text!important}
+.cert .ct2{color:#8A7A5E!important}
+.cert .ct3{color:#6B6152!important}
+.cert .cnm{color:#2B2218!important;border-bottom-color:rgba(150,112,44,.7)!important}
+.cert .ct4{color:#5A5044!important}
+.cert .ct4 b{color:#2B2218!important}
+.cert .sg{color:#6E5420!important}
+.cert .csig i{background:rgba(150,112,44,.6)!important}
+.cert .csig small{color:#8A7F6E!important}
+.cert .seal{filter:drop-shadow(0 .3cqw .6cqw rgba(90,60,10,.35))!important}
+.cert{box-shadow:0 30px 60px -28px rgba(60,40,10,.45),0 2px 0 rgba(255,255,255,.5) inset!important}
+
 </style>
 </head>
 <body>
@@ -353,7 +386,7 @@ input,select,textarea{border-radius:12px!important}
           <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8E6A2B"/><stop offset=".35" stop-color="#F1D9A0"/><stop offset=".6" stop-color="#C69A4A"/><stop offset="1" stop-color="#8E6A2B"/></linearGradient></defs></svg>
           <div class="frame">
             <svg class="cn tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58V20C2 10 10 2 20 2h38" fill="none" stroke="url(#gf)" stroke-width="1.6"/><path d="M8 58V24c0-9 7-16 16-16h34" fill="none" stroke="url(#gf)" stroke-width=".8"/><circle cx="8" cy="8" r="3" fill="url(#gf)"/><path d="M14 14c6-1 10 2 11 8-6 1-10-2-11-8z" fill="url(#gf)" opacity=".85"/></svg><svg class="cn tr" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58V20C2 10 10 2 20 2h38" fill="none" stroke="url(#gf)" stroke-width="1.6"/><path d="M8 58V24c0-9 7-16 16-16h34" fill="none" stroke="url(#gf)" stroke-width=".8"/><circle cx="8" cy="8" r="3" fill="url(#gf)"/><path d="M14 14c6-1 10 2 11 8-6 1-10-2-11-8z" fill="url(#gf)" opacity=".85"/></svg><svg class="cn bl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58V20C2 10 10 2 20 2h38" fill="none" stroke="url(#gf)" stroke-width="1.6"/><path d="M8 58V24c0-9 7-16 16-16h34" fill="none" stroke="url(#gf)" stroke-width=".8"/><circle cx="8" cy="8" r="3" fill="url(#gf)"/><path d="M14 14c6-1 10 2 11 8-6 1-10-2-11-8z" fill="url(#gf)" opacity=".85"/></svg><svg class="cn br" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58V20C2 10 10 2 20 2h38" fill="none" stroke="url(#gf)" stroke-width="1.6"/><path d="M8 58V24c0-9 7-16 16-16h34" fill="none" stroke="url(#gf)" stroke-width=".8"/><circle cx="8" cy="8" r="3" fill="url(#gf)"/><path d="M14 14c6-1 10 2 11 8-6 1-10-2-11-8z" fill="url(#gf)" opacity=".85"/></svg>
-            <img class="clogo" src="img/happy.png" alt="Happy Nation — Criminal Experience">
+            <img class="clogo" src="img/happy_gold.png" alt="Happy Nation — Criminal Experience">
             <div class="ct1">Certificado</div>
             <div class="ct2">de participação</div>
             <div class="ct3">Certificamos que</div>
@@ -364,10 +397,10 @@ input,select,textarea{border-radius:12px!important}
               <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
                 <defs><path id="ring" d="M60 60m-41 0a41 41 0 1 1 82 0a41 41 0 1 1-82 0"/></defs>
                 <g fill="url(#gf)"><path transform="rotate(0 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(15 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(30 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(45 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(60 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(75 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(90 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(105 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(120 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(135 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(150 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(165 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(180 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(195 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(210 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(225 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(240 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(255 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(270 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(285 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(300 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(315 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(330 60 60)" d="M60 2l4 10h-8z"/><path transform="rotate(345 60 60)" d="M60 2l4 10h-8z"/></g>
-                <circle cx="60" cy="60" r="50" fill="#14110D" stroke="url(#gf)" stroke-width="2"/>
-                <circle cx="60" cy="60" r="33" fill="none" stroke="url(#gf)" stroke-width=".8"/>
-                <text font-family="Sora,sans-serif" font-size="7" font-weight="700" letter-spacing="1.1" fill="#D9B66C"><textPath href="#ring">HAPPY NATION · CRIMINAL EXPERIENCE · 2026 ·</textPath></text>
-                <text x="60" y="68" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="22" fill="url(#gf)">HN</text>
+                <circle cx="60" cy="60" r="50" fill="url(#gf)" stroke="#7A5A20" stroke-width="1.2"/>
+                <circle cx="60" cy="60" r="33" fill="#FBF6EA" stroke="#7A5A20" stroke-width=".8"/>
+                <text font-family="Sora,sans-serif" font-size="7" font-weight="700" letter-spacing="1.1" fill="#3A2A0E"><textPath href="#ring">HAPPY NATION · CRIMINAL EXPERIENCE · 2026 ·</textPath></text>
+                <text x="60" y="68" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="22" fill="#6E4F18">HN</text>
               </svg>
               <div><span class="sg">09 · 12 · 2026</span><i></i><small>Data de realização</small></div>
             </div>
@@ -392,19 +425,13 @@ input,select,textarea{border-radius:12px!important}
   </div>
 </section>
 
-<section class="dark who">
-  <div class="grid">
-    <div class="shot">
-      <img src="img/dubai_bg.jpg" alt="">
-      <div class="behind name-big">Bryan</div>
-      <img src="img/dubai_cut.webp" alt="Bryan Souza">
-    </div>
-    <div>
-      <p class="kick">Quem conduz</p>
-      <h2>Bryan Souza</h2>
-      <p class="b">Advogado criminalista. No dia em que pegou a OAB, não tinha nenhum cliente. Em um ano e meio, construiu o escritório com foco no criminal, conteúdo nas redes e muita prática de delegacia. As mesmas dicas já ajudaram colegas de faculdade a conseguir os primeiros clientes.</p>
-      <div class="stats"><div><b>140+</b><span>processos ativos</span></div><div><b>300+</b><span>diligências</span></div><div><b>18</b><span>meses de advocacia</span></div></div>
-    </div>
+<section class="who-full" aria-label="Quem conduz">
+  <div class="wpic"><img class="wbg" src="img/dubai_full.jpg" alt="Bryan Souza em Dubai, ao lado de um carro esportivo vermelho" loading="lazy"><div class="wshade"></div></div>
+  <div class="wtxt">
+    <p class="kick">Quem conduz</p>
+    <h2>Bryan Souza</h2>
+    <p class="b">Advogado criminalista. No dia em que pegou a OAB, não tinha nenhum cliente. Em um ano e meio, construiu o escritório com foco no criminal, conteúdo nas redes e muita prática de delegacia. As mesmas dicas já ajudaram colegas de faculdade a conseguir os primeiros clientes.</p>
+    <div class="wstats"><div><b>140+</b><span>processos ativos</span></div><div><b>300+</b><span>diligências</span></div><div><b>18</b><span>meses de advocacia</span></div></div>
   </div>
 </section>
 
