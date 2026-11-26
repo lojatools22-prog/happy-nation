@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Nation · Criminal Experience</title>
+<meta name="description" content="Imersão presencial com Bryan Souza para quem quer construir a carreira na advocacia criminal. 9 de dezembro, 18h30. Turma de 20 lugares, por aplicação.">
+<meta property="og:title" content="Happy Nation · Criminal Experience">
+<meta property="og:description" content="De zero clientes a 140 processos em 18 meses. O caminho, em uma noite.">
+<meta property="og:image" content="img/office_bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="img/bryan.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Cinzel:wght@600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* VOICE: convite de escritório de advocacia — sóbrio, impresso, sem enfeite digital.
+   IDEA: um convite em papel creme com uma foto de retrato de verdade; o texto passa atrás do Bryan, como nos vídeos dele.
+   PICTURE: a foto inteira do escritório, com "18.12" gigante entre a parede e o Bryan; o certificado impresso como segundo objeto.
+   COLOUR/TYPE: preto-café e papel creme, dourado só em detalhes; Cormorant Garamond nos títulos, Inter no texto.
+   LAYOUT: foto e convite no topo; programa como índice de livro; certificado; confirmação em 3 passos; quem conduz. */
+:root{color-scheme:light;--ink:#14110D;--ink2:#1E1A14;--paper:#EFE8DB;--paper2:#E5DCCB;--line:#CDBFA6;--dline:#3A3226;--gold:#A57E3A;--gold2:#D7BC84;--txt:#1B1712;--mut:#62584A;--bone:#F3EDE2;--bmut:#B9AE9B}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:light}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;font-variant-numeric:lining-nums;background:var(--paper);color:var(--txt);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.04;margin:0;text-wrap:balance}
+p{margin:0}
+.kick{font-size:13px;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:12px}
+.kick:after{content:"";height:1px;width:48px;background:currentColor;opacity:.6}
+.dark .kick{color:var(--gold2)}
+.card .kick{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;background:var(--gold2);color:var(--ink);font:700 16px Inter,sans-serif;text-decoration:none;border:0;border-radius:2px;cursor:pointer}
+.paper .btn,.card .btn{background:var(--ink);color:var(--bone)}
+.btn:hover{filter:brightness(1.06)}
+.btn.full{width:100%}
+.txtlink{color:inherit;font-weight:600;text-underline-offset:4px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* foto com texto atrás */
+.shot{position:relative;aspect-ratio:1080/1921;container-type:inline-size;overflow:hidden;background:#000}
+.shot>img:not(.toplogo){position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.shot .behind{position:absolute;left:0;right:0;text-align:center;font-family:"Cormorant Garamond",serif;font-weight:600;line-height:.8;color:var(--gold2);letter-spacing:-.02em;white-space:nowrap}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--bone)}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);max-width:1120px;margin:0 auto;align-items:center;gap:56px;padding:40px max(5vw,20px)}
+.hero .logo{width:240px;height:auto;display:block;margin-bottom:56px}
+.hero h1{font-size:clamp(44px,6vw,68px)}
+.hero h1 i{color:var(--gold2);font-weight:500}
+.hero .meta{margin:22px 0 32px;color:var(--bmut);font-size:17px;max-width:440px}
+.hero .meta b{color:var(--bone);font-weight:600}
+.hero .acts{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.date-big{font-family:Cinzel,serif!important;font-size:27cqw;top:20%;letter-spacing:-.01em}
+.date-sm{position:absolute;left:0;right:0;top:12.5%;text-align:center;font:600 3.4cqw Inter,sans-serif;letter-spacing:.3em;color:var(--bone);opacity:.85}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:0 7% 7%;color:var(--bone)}
+.hero .shot .cap{display:none}
+.toplogo{display:none;position:absolute;top:5%;left:0;right:0;margin:0 auto;width:52%;height:auto;z-index:2}
+
+/* PAPEL */
+.paper{background:var(--paper)}
+.wrap{max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,104px) max(5vw,20px)}
+.sec-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:48px}
+.sec-h h2{font-size:clamp(38px,5vw,58px);margin-top:14px}
+.sec-h p{color:var(--mut);font-size:17px;max-width:460px}
+.prog{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;border-top:1px solid var(--line)}
+.prog li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
+.prog .n{font-family:Cinzel,serif;font-size:42px;line-height:.9;color:var(--gold);font-weight:600}
+.prog h3{font-size:27px;margin-bottom:8px}
+.prog ul{margin:0;padding:0;list-style:none;color:var(--mut);font-size:15.5px}
+.prog ul li{display:block;border:0;padding:3px 0 3px 18px;position:relative}
+.prog ul li:before{content:"";position:absolute;left:0;top:.8em;width:8px;height:1px;background:var(--gold)}
+
+/* CERTIFICADO */
+.gain{background:var(--paper2)}
+.gain .grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.cert{background:#FBF8F1;aspect-ratio:1.414;padding:clamp(14px,2.2vw,22px);box-shadow:0 1px 0 rgba(0,0,0,.05),0 24px 50px -18px rgba(40,28,10,.45);transform:rotate(-1.2deg);container-type:inline-size}
+.cert .in{height:100%;border:1px solid var(--gold);outline:1px solid rgba(165,126,58,.4);outline-offset:-7px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4cqw 6cqw;gap:1.6cqw}
+.cert .t1{font-family:Cinzel,serif;font-weight:600;font-size:5.2cqw;letter-spacing:.18em;color:var(--txt)}
+.cert .t2{font-size:2.2cqw;color:var(--mut);letter-spacing:.08em}
+.cert .nm{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:7cqw;line-height:1.1;color:var(--txt);border-bottom:1px solid var(--line);padding:0 4cqw .6cqw;min-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.cert .t3{font-size:2.3cqw;color:var(--mut);line-height:1.5;max-width:80%}
+.cert .sig{display:flex;justify-content:space-between;width:100%;margin-top:2.4cqw;align-items:flex-end}
+.cert .sig div{font-size:1.9cqw;color:var(--mut);border-top:1px solid var(--line);padding-top:.8cqw;width:34%}
+.cert .seal{width:11cqw;height:11cqw;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:Cinzel,serif;font-size:3.4cqw;color:var(--gold)}
+.cert-note{font-size:13px;color:var(--mut);margin-top:22px;text-align:center}
+.items{display:grid;gap:0;border-top:1px solid var(--line)}
+.items div{padding:18px 0;border-bottom:1px solid var(--line)}
+.items b{display:block;font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:600;line-height:1.2}
+.items span{color:var(--mut);font-size:15px}
+
+/* CONFIRMAÇÃO */
+.dark{background:var(--ink);color:var(--bone)}
+.confirm .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,88px);align-items:start}
+.confirm h2{font-size:clamp(38px,5vw,56px);margin:14px 0 16px}
+.confirm .lead{color:var(--bmut);font-size:17px}
+.howto{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--dline)}
+.howto li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--dline);color:var(--bmut)}
+.howto li b{color:var(--gold2);font-family:Cinzel,serif;font-size:20px;line-height:1;width:22px}
+.howto li.on{color:var(--bone)}
+.card{background:var(--bone);color:var(--txt);padding:clamp(24px,4vw,44px);border-radius:2px}
+.bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:28px}
+.bar i{height:3px;background:var(--line)}
+.bar i.on{background:var(--gold)}
+.pane{display:none}.pane.on{display:block}
+.pane h3{font-size:34px;margin-bottom:6px}
+.pane .hint{color:var(--mut);margin-bottom:22px}
+.facts{border-top:1px solid var(--line);margin-bottom:26px}
+.fact{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.fact span{color:var(--mut);font-size:14px}
+.fact b{font-weight:600}
+.fact small{display:block;color:var(--mut);font-weight:400;font-size:14px}
+.fgrid{display:grid;gap:16px}
+textarea{width:100%;padding:12px 14px;font:16px/1.5 Inter,sans-serif;color:var(--txt);background:#fff;border:1px solid var(--line);border-radius:2px;resize:vertical}
+textarea[aria-invalid=true],select[aria-invalid=true]{border-color:#b4553c}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+label.f{display:grid;gap:6px;font-size:14px;font-weight:600}
+label.f small{font-weight:400;color:var(--mut)}
+input,select{width:100%;min-height:50px;padding:12px 14px;font:16px Inter,sans-serif;color:var(--txt);background:#fff;border:1px solid var(--line);border-radius:2px}
+input[aria-invalid=true]{border-color:#b4553c}
+.err{color:#a4442c;font-size:13px}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.chk input{width:22px;height:22px;min-height:0;margin-top:2px;accent-color:var(--ink);flex:none}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px}
+.back{background:none;border:0;color:var(--mut);font:600 15px Inter,sans-serif;cursor:pointer;padding:12px 0;text-decoration:underline;text-underline-offset:4px}
+.sum{border-top:1px solid var(--line);margin-bottom:22px}
+.sum div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.sum span{color:var(--mut)}
+.sum b{text-align:right;overflow-wrap:anywhere}
+.note{font-size:13px;color:var(--mut);margin-top:12px;text-align:center}
+.after{display:none;margin-top:22px;padding-top:20px;border-top:1px solid var(--line);text-align:center}
+.after.on{display:block}
+.after h3{font-size:30px}
+.after .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.ghost{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border:1px solid var(--txt);color:var(--txt);text-decoration:none;font:600 15px Inter,sans-serif;background:none;cursor:pointer;border-radius:2px}
+
+/* QUEM CONDUZ */
+.who .grid{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center;max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,104px) max(5vw,20px)}
+.name-big{font-style:italic;font-size:33cqw;top:17.5%}
+.who h2{font-size:clamp(40px,5vw,60px);margin:14px 0 18px}
+.who p.b{color:var(--bmut);font-size:17px;max-width:520px}
+.stats{display:flex;gap:44px;margin-top:30px;padding-top:24px;border-top:1px solid var(--dline)}
+.stats b{display:block;font-family:Cinzel,serif;font-size:44px;line-height:1;color:var(--gold2);font-weight:600}
+.stats span{color:var(--bmut);font-size:14px}
+footer{background:var(--ink);color:var(--bmut);text-align:center;font-size:13px;padding:8px 20px 48px}
+footer img{width:110px;opacity:.85;display:block;margin:0 auto 10px}
+
+
+.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;border-top:1px solid var(--line)}
+.four div{padding:24px 0;border-bottom:1px solid var(--line)}
+.four h3{font-size:28px;margin-bottom:6px}
+.four p{color:var(--mut)}
+.close{margin-top:32px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--gold)}
+.why h2{font-size:clamp(38px,5.4vw,62px);margin:14px 0 22px;max-width:900px}
+.why h2 i{color:var(--gold2);font-weight:500}
+.why .b{color:var(--bmut);font-size:18px;max-width:720px}
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:48px;border-top:1px solid var(--dline);padding-top:32px}
+.pillars b{font-family:Cinzel,serif;font-size:40px;color:var(--gold2);display:block;line-height:1}
+.pillars h3{font-size:28px;margin:12px 0 6px}
+.pillars p{color:var(--bmut);font-size:15.5px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq details p{color:var(--mut);margin-top:10px}
+.sending{opacity:.6;pointer-events:none}
+
+@media(max-width:820px){
+  .four{grid-template-columns:minmax(0,1fr)}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
+  .hero .grid{grid-template-columns:minmax(0,1fr);padding:0;gap:0}
+  .hero .txt{padding:32px 22px 48px}
+  .hero .txt .logo{display:none}
+  .hero .shot{width:100%;order:-1}
+  .hero .toplogo{display:block}
+  .cap .logo-m{width:58cqw;display:block;margin:0 auto 6cqw}
+  .cap h1{font-size:11.5cqw;text-align:center}
+  .cap h1 i{color:var(--gold2);font-weight:500}
+  .cap p{text-align:center;color:var(--bmut);font-size:4.1cqw;margin:3cqw 0 5cqw}
+  .cap p b{color:var(--bone)}
+  .cap .btn{width:100%}
+  .cap .sub{display:block;text-align:center;margin-top:3.5cqw;color:var(--bone);font-size:4cqw}
+  .sec-h,.gain .grid,.confirm .wrap,.who .grid{grid-template-columns:minmax(0,1fr)}
+  .sec-h{gap:16px;margin-bottom:32px}
+  .prog{grid-template-columns:minmax(0,1fr)}
+  .row2{grid-template-columns:minmax(0,1fr)}
+  .who .shot{max-width:420px;width:100%;margin:0 auto}
+  .cert{transform:rotate(-1deg)}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="grid">
+    <div class="txt" style="order:0">
+      <img class="logo" src="img/happy.png" alt="Happy Nation — Criminal Experience">
+      <p class="kick">Imersão presencial · 9 de dezembro · 18h30</p>
+      <h1 style="margin-top:18px">De zero clientes a 140 processos em 18 meses. <i>O caminho, em uma noite.</i></h1>
+      <p class="meta">Uma imersão com <b>Bryan Souza</b> para quem quer construir a carreira na advocacia criminal. Turma de 20 lugares, preenchida por aplicação.</p>
+      <div class="acts"><a class="btn" href="#confirmar">Quero aplicar</a><a class="txtlink" href="#para-quem">Ver para quem é</a></div>
+    </div>
+    <div class="shot">
+      <img src="img/office_bg.jpg" alt="">
+      <img class="toplogo" src="img/happy.png" alt="">
+      <div class="date-sm">DEZEMBRO · 2026</div>
+      <div class="behind date-big">09.12</div>
+      <img src="img/office_cut.webp" alt="Bryan Souza no escritório">
+    </div>
+  </div>
+</header>
+<section class="paper" id="para-quem">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><p class="kick">Para quem é</p><h2>Essa turma foi pensada para você se…</h2></div>
+      <p>A Happy Nation não é uma palestra para quem já chegou lá. É para quem está no começo e quer pular os anos de tentativa e erro.</p>
+    </div>
+    <div class="four">
+      <div><h3>Você já tem a OAB e ainda não fatura</h3><p>Trabalha para os outros, faz correspondência ou espera o cliente aparecer.</p></div>
+      <div><h3>Acabou de passar na prova</h3><p>Tem a carteira na mão e não sabe por onde começar.</p></div>
+      <div><h3>Atende de tudo um pouco</h3><p>Quer parar de pegar qualquer causa e construir nome no criminal.</p></div>
+      <div><h3>Está no último ano da faculdade</h3><p>Quer sair da graduação com direção, não com dúvida.</p></div>
+    </div>
+    <p class="close">Se você se viu em um desses, a Happy Nation foi feita para o seu momento.</p>
+  </div>
+</section>
+
+<section class="dark why">
+  <div class="wrap">
+    <p class="kick">Por que existe</p>
+    <h2>A faculdade te ensina a passar na OAB. <i>Ninguém te ensina a ter cliente.</i></h2>
+    <p class="b">Há um ano e meio, o Bryan tinha a carteira da OAB, a sala da mãe para atender e nenhum cliente. O primeiro veio do Instagram. A virada veio com flagrante, audiência de custódia e diligência na delegacia. Hoje são mais de 140 processos ativos. Não foi sorte: foi estratégia, e estratégia se ensina.</p>
+    <div class="pillars">
+      <div><b>1</b><h3>Foco</h3><p>Escolheu o criminal e parou de atender de tudo.</p></div>
+      <div><b>2</b><h3>Conteúdo</h3><p>Colocou a cara e o primeiro cliente veio das redes.</p></div>
+      <div><b>3</b><h3>Prática</h3><p>Flagrante, custódia e delegacia viraram a virada.</p></div>
+      <div><b>4</b><h3>Preço certo</h3><p>Parou de cobrar barato e aprendeu a precificar.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="paper" id="programa">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><p class="kick">O conteúdo da palestra</p><h2>O caminho do Bryan, em seis blocos</h2></div>
+      <p>Da carteira da OAB sem nenhum cliente a mais de 140 processos ativos em um ano e meio. O que ele fez, na ordem em que fez.</p>
+    </div>
+    <ol class="prog" id="prog"></ol>
+  </div>
+</section>
+
+<section class="gain">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="cert" aria-label="Prévia do certificado">
+          <div class="in">
+            <div class="t1">Certificado</div>
+            <div class="t2">DE PARTICIPAÇÃO</div>
+            <div class="t3" style="margin-top:1cqw">Certificamos que</div>
+            <div class="nm" id="certNome">Seu nome aqui</div>
+            <div class="t3">participou da imersão <b>Happy Nation — Criminal Experience</b>, conduzida por Bryan Souza, realizada em 9 de dezembro de 2026.</div>
+            <div class="sig"><div>Bryan Souza<br>Advogado criminalista</div><span class="seal">HN</span><div>Happy Nation<br>Criminal Experience</div></div>
+          </div>
+        </div>
+        <p class="cert-note">Prévia ilustrativa. O nome aparece como você preencher na aplicação.</p>
+      </div>
+      <div>
+        <p class="kick">O que você recebe</p>
+        <h2 style="font-size:clamp(38px,5vw,54px);margin:14px 0 26px">Tudo o que você leva da Happy Nation</h2>
+        <div class="items">
+          <div><b>Uma noite com o Bryan, ao vivo</b><span>Tudo o que ele fez, na ordem em que fez, com espaço para as suas perguntas.</span></div>
+          <div><b>Workbook do plano 30-60-90</b><span>Você sai com as metas dos seus 3 primeiros meses preenchidas.</span></div>
+          <div><b>Tabela de honorários de referência</b><span>Para cobrar flagrante e diligência com segurança.</span></div>
+          <div><b>Roteiro de atendimento de flagrante</b><span>Do telefonema de madrugada à conversa na cela.</span></div>
+          <div><b>Banco com 50 pautas de conteúdo</b><span>Para gravar os primeiros 30 dias sem travar.</span></div>
+          <div><b>Certificado de participação</b><span>Com o seu nome.</span></div>
+          <div><b>Uma turma de no máximo 20 pessoas</b><span>Contato próximo com o Bryan e com advogados no mesmo momento que você.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark who">
+  <div class="grid">
+    <div class="shot">
+      <img src="img/cafe_bg.jpg" alt="">
+      <div class="behind name-big">Bryan</div>
+      <img src="img/cafe_cut.webp" alt="Bryan Souza">
+    </div>
+    <div>
+      <p class="kick">Quem conduz</p>
+      <h2>Bryan Souza</h2>
+      <p class="b">Advogado criminalista. No dia em que pegou a OAB, não tinha nenhum cliente. Em um ano e meio, construiu o escritório com foco no criminal, conteúdo nas redes e muita prática de delegacia. As mesmas dicas já ajudaram colegas de faculdade a conseguir os primeiros clientes.</p>
+      <div class="stats"><div><b>140+</b><span>processos ativos</span></div><div><b>18</b><span>meses de advocacia</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark confirm" id="confirmar">
+  <div class="wrap">
+    <div>
+      <p class="kick">Aplicação</p>
+      <h2>Como funciona a seleção</h2>
+      <p class="lead">A turma é pequena de propósito: o Bryan quer olhar para cada participante. Por isso as vagas são preenchidas por aplicação.</p>
+      <ol class="howto" id="howto">
+        <li><b>1</b>Você preenche sua aplicação</li>
+        <li><b>2</b>A equipe do Bryan analisa cada perfil</li>
+        <li><b>3</b>Se combinar com a turma, o Bryan te chama no WhatsApp</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="bar" id="bar"><i></i><i></i><i></i></div>
+
+      <div class="pane" id="p1">
+        <h3>Sobre você</h3>
+        <p class="hint">Seu nome sai assim no certificado.</p>
+        <div class="fgrid">
+          <label class="f">Nome completo<input id="nome" autocomplete="name" placeholder="Nome e sobrenome"><span class="err" id="e-nome"></span></label>
+          <div class="row2">
+            <label class="f">WhatsApp<input id="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000"><span class="err" id="e-zap"></span></label>
+            <label class="f">E-mail<input id="email" type="email" autocomplete="email" placeholder="voce@email.com"><span class="err" id="e-email"></span></label>
+          </div>
+          <label class="f">Cidade e estado<input id="cidade" autocomplete="address-level2" placeholder="Ex.: Mogi das Cruzes/SP"><span class="err" id="e-cidade"></span></label>
+          <div class="nav"><span></span><button class="btn" type="button" data-next="1">Continuar</button></div>
+        </div>
+      </div>
+
+      <div class="pane" id="p2">
+        <h3>Sua advocacia hoje</h3>
+        <p class="hint">Não existe resposta certa. É o que ajuda o Bryan a montar a turma.</p>
+        <div class="fgrid">
+          <label class="f">Em que momento você está?
+            <select id="momento"><option value="">Escolha uma opção</option><option>Estudante do último ano</option><option>Bacharel, aguardando a OAB</option><option>Advogado(a) com até 1 ano de OAB</option><option>Advogado(a) de 1 a 3 anos</option><option>Advogado(a) há mais de 3 anos</option></select>
+            <span class="err" id="e-momento"></span></label>
+          <div class="row2">
+            <label class="f">Nº da OAB <small>(se tiver)</small><input id="oab" placeholder="Ex.: 123456/SP"></label>
+            <label class="f">Hoje você atua com
+              <select id="area"><option value="">Escolha</option><option>Criminal</option><option>Outras áreas, quero ir para o criminal</option><option>Várias áreas ao mesmo tempo</option><option>Ainda não atuo</option></select>
+              <span class="err" id="e-area"></span></label>
+          </div>
+          <label class="f">Quanto a advocacia te rende por mês hoje?
+            <select id="renda"><option value="">Escolha uma faixa</option><option>Ainda não tenho renda com advocacia</option><option>Até R$ 2 mil</option><option>De R$ 2 mil a R$ 5 mil</option><option>De R$ 5 mil a R$ 10 mil</option><option>Acima de R$ 10 mil</option></select>
+            <span class="err" id="e-renda"></span></label>
+          <label class="f">O que mais te trava hoje?
+            <select id="trava"><option value="">Escolha uma opção</option><option>Conseguir clientes</option><option>Saber cobrar</option><option>Insegurança na prática (delegacia, flagrante, audiência)</option><option>Me posicionar e aparecer nas redes</option><option>Escolher uma área</option></select>
+            <span class="err" id="e-trava"></span></label>
+          <div class="nav"><button class="back" type="button" data-go="1">Voltar</button><button class="btn" type="button" data-next="2">Continuar</button></div>
+        </div>
+      </div>
+
+      <div class="pane" id="p3">
+        <h3>Por que você?</h3>
+        <p class="hint">Duas respostas rápidas e sua aplicação está pronta.</p>
+        <div class="fgrid">
+          <label class="f">Em poucas linhas: por que você quer estar nessa turma?<textarea id="motivo" rows="4" placeholder="Conte o que você quer mudar na sua advocacia"></textarea><span class="err" id="e-motivo"></span></label>
+          <label class="f">Você consegue estar presente na quarta, 9 de dezembro, às 18h30?
+            <select id="agenda"><option value="">Escolha</option><option>Sim, já reservei a data</option><option>Provavelmente sim</option><option>Ainda não sei</option></select>
+            <span class="err" id="e-agenda"></span></label>
+          <label class="f">Se for selecionado(a), está disposto(a) a investir na sua carreira agora?
+            <select id="invest"><option value="">Escolha</option><option>Sim, estou pronto(a)</option><option>Sim, dependendo das condições</option><option>Neste momento não</option></select>
+            <span class="err" id="e-invest"></span></label>
+          <label class="chk"><input type="checkbox" id="ok"><span>Autorizo a equipe do Bryan Souza a entrar em contato comigo pelo WhatsApp sobre a imersão.</span></label>
+          <span class="err" id="e-ok"></span>
+          <div class="nav"><button class="back" type="button" data-go="2">Voltar</button><button class="btn" type="button" id="send">Enviar aplicação</button></div>
+        </div>
+      </div>
+
+      <div class="pane" id="p4">
+        <div style="text-align:center;padding:12px 0">
+          <p class="kick" style="justify-content:center">Aplicação recebida</p>
+          <h3 style="font-size:40px;margin:14px 0 12px" id="okTitle">Obrigado.</h3>
+          <p class="hint" style="max-width:420px;margin:0 auto 22px">Cada aplicação é lida com atenção. Se o seu perfil combinar com esta turma, o Bryan te chama no WhatsApp nos próximos dias, a partir do número que você informou.</p>
+          <p class="note" style="margin:0">Enquanto isso, salve o número que vai te chamar para não perder a mensagem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="paper faq">
+  <div class="wrap" style="max-width:760px">
+    <p class="kick">Dúvidas</p>
+    <h2 style="font-size:clamp(36px,5vw,50px);margin:14px 0 24px">Antes de aplicar</h2>
+    <details><summary>Quanto custa?</summary><p>O investimento é apresentado pelo próprio Bryan, no WhatsApp, para quem for selecionado.</p></details>
+    <details><summary>Preciso já ter a OAB?</summary><p>Não. A turma é para advogados em início de carreira, recém-aprovados e estudantes do último ano.</p></details>
+    <details><summary>Onde vai ser?</summary><p>É presencial. O endereço é enviado aos selecionados.</p></details>
+    <details><summary>Vou receber certificado?</summary><p>Sim, com o nome que você informar na aplicação.</p></details>
+    <details><summary>Quanto tempo leva a análise?</summary><p>Poucos dias. Se o seu perfil combinar com a turma, você recebe a mensagem do Bryan no WhatsApp.</p></details>
+  </div>
+</section>
+
+<footer><img src="img/bryan.png" alt="Bryan Souza Advocacia Especializada">Happy Nation · Criminal Experience · 9 de dezembro de 2026 · 18h30 · Aplicações sujeitas a análise</footer>
+
+<script src="config.js"></script>
+<script>
+{
+  /* ===== EDITE AQUI ===== */
+  const CONFIG = window.HN_CONFIG || {};
+  /* ====================== */
+  const $ = id => document.getElementById(id);
+  const PROG = [
+    ["A decisão", ["Da OAB sem clientes a 140+ processos", "Por que escolher a advocacia criminal", "Advocacia vs. concurso público"]],
+    ["Posicionamento", ["Parar de atender de tudo e escolher a área", "Como se apresentar para o cliente", "O perfil que passa confiança"]],
+    ["Conteúdo que gera cliente", ["A rotina de vídeos dos primeiros 30 dias", "Como usar casos de repercussão", "Pautas e formatos que trazem cliente"]],
+    ["Flagrante, custódia e delegacia", ["O telefone toca de madrugada: o que fazer", "Como se portar na delegacia", "Como falar com o cliente na cela"]],
+    ["Preço e fechamento", ["O erro de cobrar barato", "Como precificar flagrante e diligência", "Como apresentar honorários e fechar"]],
+    ["Plano 30-60-90", ["Você monta o seu plano no evento", "Metas claras para os 3 primeiros meses", "Próximos passos depois da imersão"]]
+  ];
+  $("prog").innerHTML = PROG.map((p, i) => `<li><span class="n">${i+1}</span><div><h3>${p[0]}</h3><ul>${p[1].map(x => `<li>${x}</li>`).join("")}</ul></div></li>`).join("");
+
+  const show = (n, scroll) => {
+    for (let i = 1; i <= 4; i++) $("p"+i).classList.toggle("on", i === n);
+    [...$("bar").children].forEach((b, i) => b.classList.toggle("on", i < n));
+    [...$("howto").children].forEach((li, i) => li.classList.toggle("on", n === 4 ? i === 1 : i === 0));
+    if (scroll) $("confirmar").scrollIntoView({block:"start"});
+  };
+  show(1);
+  document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => show(+b.dataset.go, true)));
+
+  const F = ["nome","zap","email","cidade","momento","oab","area","renda","trava","motivo","agenda","invest"];
+  const certName = () => { const v = $("nome").value.trim(); $("certNome").textContent = v || "Seu nome aqui"; };
+  try { const d = JSON.parse(localStorage.getItem("hn_app") || "{}"); for (const k in d) if ($(k)) $(k).value = d[k]; } catch (e) {}
+  certName();
+  const save = () => { try { const o = {}; F.forEach(k => o[k] = $(k).value); localStorage.setItem("hn_app", JSON.stringify(o)); } catch (e) {} };
+  F.forEach(k => { $(k).addEventListener("input", save); $(k).addEventListener("change", save); });
+  $("nome").addEventListener("input", certName);
+  $("zap").addEventListener("input", e => {
+    const d = e.target.value.replace(/\D/g,"").slice(0,11);
+    e.target.value = d.length > 6 ? `(${d.slice(0,2)}) ${d.slice(2,d.length-4)}-${d.slice(-4)}` : d.length > 2 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d;
+  });
+  const setErr = (id, t) => { $("e-"+id).textContent = t; const i = $(id); if (i) i.setAttribute("aria-invalid", t ? "true" : "false"); return !t; };
+  const need = (id, msg) => setErr(id, $(id).value.trim() ? "" : msg);
+  const check = {
+    1: () => {
+      const nome = $("nome").value.trim().replace(/\s+/g," ");
+      let ok = setErr("nome", nome.split(" ").length < 2 ? "Escreva nome e sobrenome." : "");
+      ok = setErr("zap", $("zap").value.replace(/\D/g,"").length < 10 ? "Informe o WhatsApp com DDD." : "") && ok;
+      ok = setErr("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim()) ? "" : "Confira o e-mail.") && ok;
+      return need("cidade", "Informe sua cidade.") && ok;
+    },
+    2: () => [need("momento","Escolha uma opção."), need("area","Escolha uma opção."), need("renda","Escolha uma faixa."), need("trava","Escolha uma opção.")].every(Boolean),
+    3: () => {
+      let ok = setErr("motivo", $("motivo").value.trim().length < 15 ? "Escreva um pouco mais, em poucas linhas." : "");
+      ok = need("agenda","Escolha uma opção.") && ok; ok = need("invest","Escolha uma opção.") && ok;
+      $("e-ok").textContent = $("ok").checked ? "" : "Marque a autorização para enviar."; return $("ok").checked && ok;
+    }
+  };
+  const fail = () => (document.querySelector('.pane.on [aria-invalid=true]') || $("ok")).focus();
+  document.querySelectorAll("[data-next]").forEach(b => b.addEventListener("click", () => { const n = +b.dataset.next; if (!check[n]()) return fail(); show(n + 1, true); }));
+  $("send").addEventListener("click", async () => {
+    if (!check[3]()) return fail();
+    const dados = {};
+    F.forEach(k => dados[k] = $(k).value.trim());
+    dados.investimento = dados.invest; delete dados.invest;
+    dados.whatsapp = dados.zap; delete dados.zap;
+    const btn = $("send"); btn.classList.add("sending"); btn.textContent = "Enviando…"; $("e-ok").textContent = "";
+    try {
+      const r = await fetch(CONFIG.SUPABASE_URL + "/rest/v1/rpc/enviar_aplicacao", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", apikey: CONFIG.SUPABASE_ANON_KEY, Authorization: "Bearer " + CONFIG.SUPABASE_ANON_KEY },
+        body: JSON.stringify({ dados })
+      });
+      if (!r.ok) throw new Error(await r.text());
+      $("okTitle").textContent = "Obrigado, " + $("nome").value.trim().split(/\s+/)[0] + ".";
+      try { localStorage.removeItem("hn_app"); } catch (e) {}
+      show(4, true);
+    } catch (e) {
+      $("e-ok").textContent = "Não conseguimos enviar agora. Tente de novo em instantes.";
+    } finally { btn.classList.remove("sending"); btn.textContent = "Enviar aplicação"; }
+  });
+}
+</script>
+</body>
+</html>

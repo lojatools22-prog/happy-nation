@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel · Happy Nation</title>
+<link rel="icon" href="img/bryan.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Cinzel:wght@600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#14110D;--paper:#EFE8DB;--paper2:#E5DCCB;--card:#FBF8F1;--line:#CDBFA6;--gold:#A57E3A;--gold2:#D7BC84;--txt:#1B1712;--mut:#62584A;--bone:#F3EDE2;--bmut:#B9AE9B;--ok:#2F6B45;--warn:#9A5B12;--bad:#8E3B2B}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--paper);color:var(--txt);font:15px/1.55 Inter,system-ui,sans-serif;font-variant-numeric:lining-nums}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+button,input,select,textarea{font:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:0;border-radius:2px;background:var(--ink);color:var(--bone);font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn.gold{background:var(--gold2);color:var(--ink)}
+.btn.zap{background:#1F6E43;color:#fff}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--txt)}
+.btn.sm{min-height:36px;padding:0 12px;font-size:14px}
+input,select,textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:2px;background:#fff;color:var(--txt);font-size:16px}
+textarea{min-height:96px;resize:vertical}
+/* login */
+.login{min-height:100svh;display:grid;place-items:center;background:var(--ink);padding:24px}
+.login .box{width:min(400px,100%);background:var(--bone);padding:36px 30px;border-radius:2px}
+.login img{width:220px;display:block;margin:0 auto 26px}
+.login h1{font-size:32px;margin-bottom:6px}
+.login p{color:var(--mut);margin:0 0 20px}
+.login label{display:grid;gap:6px;font-weight:600;font-size:14px;margin-bottom:14px}
+.err{color:var(--bad);font-size:14px;min-height:20px;margin-top:8px}
+/* app */
+header{background:var(--ink);color:var(--bone);padding:14px max(4vw,16px);display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:5}
+header img{height:26px;width:auto}
+header .who{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--bmut)}
+main{max-width:1200px;margin:0 auto;padding:24px max(4vw,16px) 64px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.top h1{font-size:clamp(30px,4vw,40px)}
+.seats{background:var(--ink);color:var(--bone);padding:14px 20px;border-radius:2px;display:flex;align-items:baseline;gap:10px}
+.seats b{font-family:Cinzel,serif;font-size:30px;color:var(--gold2)}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:20px}
+.stats button{background:var(--card);border:0;padding:14px 12px;text-align:left;cursor:pointer}
+.stats button.on{background:var(--paper2)}
+.stats b{display:block;font-family:Cinzel,serif;font-size:26px;line-height:1.1}
+.stats span{font-size:13px;color:var(--mut)}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;margin-bottom:18px}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.lead .h{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.lead h3{font-size:24px}
+.lead .city{color:var(--mut);font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:600;padding:3px 8px;border-radius:2px;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
+.t-pri{background:#14110D;color:var(--gold2);border-color:#14110D}
+.t-bom{background:#EADBB8;color:#5A4210;border-color:#D9C391}
+.t-ava{background:#fff;color:var(--mut)}
+.st{font-size:12px;font-weight:700;padding:3px 8px;border-radius:2px;white-space:nowrap}
+.s-novo{background:#E8E0FF;color:#3D2E86}.s-chamado{background:#FFF0D6;color:var(--warn)}.s-conversa{background:#DDEEFF;color:#1C4E80}.s-confirmado{background:#DCF0E2;color:var(--ok)}.s-nao{background:#F2E1DC;color:var(--bad)}
+.lead dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font-size:14px}
+.lead dt{color:var(--mut)}
+.lead dd{margin:0}
+.lead .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.empty{padding:48px 20px;text-align:center;color:var(--mut);border:1px dashed var(--line)}
+/* detalhe */
+.drawer{position:fixed;inset:0;background:rgba(20,17,13,.5);display:none;z-index:10}
+.drawer.on{display:block}
+.panel{position:absolute;right:0;top:0;bottom:0;width:min(560px,100%);background:var(--paper);overflow:auto;padding:24px}
+.panel h2{font-size:34px}
+.panel .x{float:right}
+.qa{border-top:1px solid var(--line);margin:18px 0}
+.qa div{padding:10px 0;border-bottom:1px solid var(--line)}
+.qa span{display:block;font-size:12px;color:var(--mut);font-weight:600}
+.qa p{margin:2px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.stbtns{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 18px}
+.stbtns button{min-height:38px;padding:0 12px;border:1px solid var(--line);background:#fff;border-radius:2px;cursor:pointer;font-weight:600;font-size:14px}
+.stbtns button.on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.saved{font-size:13px;color:var(--mut);min-height:18px}
+.hide{display:none!important}
+@media(max-width:860px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.filters{grid-template-columns:1fr 1fr}.filters .q{grid-column:1/-1}.list{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+
+<section class="login" id="vLogin">
+  <form class="box" id="fLogin">
+    <img src="img/happy.png" alt="Happy Nation" style="filter:brightness(.45) sepia(1) saturate(2)">
+    <h1>Painel do Bryan</h1>
+    <p>Entre para ver as aplicações da Happy Nation.</p>
+    <label>E-mail<input id="lEmail" type="email" autocomplete="username" required></label>
+    <label>Senha<input id="lPass" type="password" autocomplete="current-password" required></label>
+    <button class="btn gold" style="width:100%" type="submit" id="lBtn">Entrar</button>
+    <div class="err" id="lErr"></div>
+  </form>
+</section>
+
+<section class="login hide" id="vDenied">
+  <div class="box"><h1>Acesso restrito</h1><p>Esta conta não tem permissão para ver o painel. Fale com o Caique para liberar.</p><button class="btn" id="bOut2">Sair</button></div>
+</section>
+
+<div id="vApp" class="hide">
+  <header><img src="img/happy.png" alt="Happy Nation"><div class="who"><span id="uEmail"></span><button class="btn sm gold" id="bOut">Sair</button></div></header>
+  <main>
+    <div class="top">
+      <div><h1>Aplicações</h1><div style="color:var(--mut)">Atualizado <span id="upd">agora</span> · <button class="btn sm ghost" id="bRef" type="button">Atualizar</button> <button class="btn sm ghost" id="bCsv" type="button">Exportar CSV</button></div></div>
+      <div class="seats">Vagas confirmadas <b id="seats">0</b> de 20</div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="filters">
+      <input class="q" id="q" placeholder="Buscar por nome ou WhatsApp" type="search">
+      <select id="fSt"><option value="">Todos os status</option><option value="novo">Novo</option><option value="chamado">Chamado</option><option value="em conversa">Em conversa</option><option value="confirmado">Confirmado</option><option value="não seguiu">Não seguiu</option></select>
+      <select id="fFx"><option value="">Todas as faixas</option><option value="pri">Prioridade</option><option value="bom">Bom perfil</option><option value="ava">Avaliar</option></select>
+      <select id="fOrd"><option value="pts">Maior pontuação</option><option value="new">Mais recentes</option><option value="old">Mais antigas</option></select>
+    </div>
+    <div class="list" id="list"></div>
+  </main>
+</div>
+
+<div class="drawer" id="drawer"><div class="panel" id="panel"></div></div>
+
+<script src="config.js"></script>
+<script>
+{
+  const C = window.HN_CONFIG || {};
+  const $ = id => document.getElementById(id);
+  const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const STS = ["novo","chamado","em conversa","confirmado","não seguiu"];
+  const stClass = s => ({"novo":"s-novo","chamado":"s-chamado","em conversa":"s-conversa","confirmado":"s-confirmado","não seguiu":"s-nao"}[s] || "");
+  const fx = p => p >= 12 ? ["pri","Prioridade","t-pri"] : p >= 8 ? ["bom","Bom perfil","t-bom"] : ["ava","Avaliar","t-ava"];
+  const fmt = d => d ? new Date(d).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}) : "";
+  const first = n => (n || "").trim().split(/\s+/)[0] || "";
+  let S = null, rows = [], open = null, stFilter = "";
+
+  const show = v => { ["vLogin","vDenied","vApp"].forEach(x => $(x).classList.toggle("hide", x !== v)); };
+  const save = s => { S = s; try { s ? localStorage.setItem("hn_sess", JSON.stringify(s)) : localStorage.removeItem("hn_sess"); } catch (e) {} };
+
+  async function auth(body, grant) {
+    const r = await fetch(C.SUPABASE_URL + "/auth/v1/token?grant_type=" + grant, { method:"POST", headers:{ "Content-Type":"application/json", apikey:C.SUPABASE_ANON_KEY }, body:JSON.stringify(body) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error_description || j.msg || "Falha no login");
+    save({ at:j.access_token, rt:j.refresh_token, exp:Date.now() + (j.expires_in - 60) * 1000, email:j.user?.email });
+  }
+  async function api(path, opt = {}, retry = true) {
+    if (S && Date.now() > S.exp) { try { await auth({ refresh_token:S.rt }, "refresh_token"); } catch (e) { logout(); throw e; } }
+    const r = await fetch(C.SUPABASE_URL + path, { ...opt, headers:{ "Content-Type":"application/json", apikey:C.SUPABASE_ANON_KEY, Authorization:"Bearer " + (S ? S.at : C.SUPABASE_ANON_KEY), ...(opt.headers || {}) } });
+    if (r.status === 401 && retry && S) { try { await auth({ refresh_token:S.rt }, "refresh_token"); return api(path, opt, false); } catch (e) { logout(); throw e; } }
+    if (!r.ok) throw new Error(await r.text());
+    return r.status === 204 ? null : r.json();
+  }
+  function logout() { save(null); show("vLogin"); }
+
+  async function enter() {
+    const ok = await api("/rest/v1/rpc/is_admin", { method:"POST", body:"{}" });
+    if (ok !== true) { show("vDenied"); return; }
+    $("uEmail").textContent = S.email || ""; show("vApp"); await load();
+  }
+  async function load() {
+    rows = await api("/rest/v1/aplicacoes?select=*&order=pontuacao.desc,criado_em.desc");
+    $("upd").textContent = new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});
+    render();
+    if (open) { const r = rows.find(x => x.id === open); if (r) detail(r, true); }
+  }
+
+  function render() {
+    const cnt = s => rows.filter(r => r.status === s).length;
+    $("seats").textContent = cnt("confirmado");
+    const st = [["","Total",rows.length],["novo","Novos",cnt("novo")],["chamado","Chamados",cnt("chamado")],["em conversa","Em conversa",cnt("em conversa")],["confirmado","Confirmados",cnt("confirmado")],["não seguiu","Não seguiram",cnt("não seguiu")]];
+    $("stats").innerHTML = st.map(s => `<button type="button" data-s="${esc(s[0])}" class="${stFilter === s[0] ? "on" : ""}"><b>${s[2]}</b><span>${s[1]}</span></button>`).join("");
+    const q = $("q").value.trim().toLowerCase(), qd = q.replace(/\D/g,""), f = $("fFx").value, o = $("fOrd").value;
+    let L = rows.filter(r => (!stFilter || r.status === stFilter) && (!f || fx(r.pontuacao)[0] === f) && (!q || (r.nome || "").toLowerCase().includes(q) || (qd && (r.whatsapp || "").includes(qd))));
+    if (o === "new") L.sort((a,b) => b.criado_em.localeCompare(a.criado_em));
+    else if (o === "old") L.sort((a,b) => a.criado_em.localeCompare(b.criado_em));
+    else L.sort((a,b) => b.pontuacao - a.pontuacao || b.criado_em.localeCompare(a.criado_em));
+    $("list").innerHTML = L.length ? L.map(r => { const x = fx(r.pontuacao); return `
+      <article class="lead">
+        <div class="h"><div><h3>${esc(r.nome)}</h3><div class="city">${esc(r.cidade)} · ${esc(fmt(r.criado_em))}</div></div><span class="st ${stClass(r.status)}">${esc(r.status)}</span></div>
+        <div class="tags"><span class="tag ${x[2]}">${x[1]} · ${r.pontuacao} pts</span><span class="tag">${esc(r.momento)}</span></div>
+        <dl><dt>Renda</dt><dd>${esc(r.renda)}</dd><dt>Trava</dt><dd>${esc(r.trava)}</dd><dt>Investir</dt><dd>${esc(r.investimento)}</dd></dl>
+        <div class="acts"><a class="btn sm zap" href="${zap(r)}" target="_blank" rel="noopener" data-call="${esc(r.id)}">Chamar no WhatsApp</a><button class="btn sm ghost" type="button" data-open="${esc(r.id)}">Ver aplicação</button></div>
+      </article>`; }).join("") : `<div class="empty">${rows.length ? "Nenhuma aplicação com esses filtros." : "Ainda não chegou nenhuma aplicação. Assim que alguém aplicar, aparece aqui."}</div>`;
+  }
+  const zap = r => "https://wa.me/" + (r.whatsapp.startsWith("55") && r.whatsapp.length > 11 ? "" : "55") + r.whatsapp + "?text=" + encodeURIComponent(`Olá, ${first(r.nome)}! Aqui é o Bryan Souza. Li sua aplicação para a Happy Nation e gostei do seu perfil. Posso te contar como vai funcionar a turma?`);
+
+  async function patch(id, body) {
+    const [r] = await api("/rest/v1/aplicacoes?id=eq." + encodeURIComponent(id), { method:"PATCH", headers:{ Prefer:"return=representation" }, body:JSON.stringify({ ...body, atualizado_em:new Date().toISOString() }) });
+    const i = rows.findIndex(x => x.id === id); if (i > -1 && r) rows[i] = r; render(); return r;
+  }
+  async function called(id) { const r = rows.find(x => x.id === id); if (r && r.status === "novo") await patch(id, { status:"chamado", chamado_em:new Date().toISOString() }); }
+
+  function detail(r, keep) {
+    open = r.id;
+    const x = fx(r.pontuacao);
+    const QA = [["WhatsApp", r.whatsapp], ["E-mail", r.email], ["Cidade", r.cidade], ["Momento", r.momento], ["OAB", r.oab || "Não informado"], ["Atua com", r.area], ["Renda com advocacia", r.renda], ["O que mais trava", r.trava], ["Por que quer estar na turma", r.motivo], ["Disponível dia 9/12, 18h30", r.agenda], ["Disposição para investir", r.investimento], ["Aplicou em", fmt(r.criado_em)], ["Chamado em", r.chamado_em ? fmt(r.chamado_em) : "Ainda não"]];
+    const obs = keep && document.activeElement && document.activeElement.id === "obs" ? null : true;
+    $("panel").innerHTML = `
+      <button class="btn sm ghost x" type="button" id="close">Fechar</button>
+      <h2>${esc(r.nome)}</h2>
+      <div class="tags" style="margin:8px 0 14px"><span class="tag ${x[2]}">${x[1]} · ${r.pontuacao} pts</span><span class="st ${stClass(r.status)}">${esc(r.status)}</span></div>
+      <a class="btn zap" style="width:100%" href="${zap(r)}" target="_blank" rel="noopener" data-call="${esc(r.id)}">Chamar no WhatsApp</a>
+      <div style="margin-top:18px;font-weight:600">Status</div>
+      <div class="stbtns">${STS.map(s => `<button type="button" data-st="${esc(s)}" class="${r.status === s ? "on" : ""}">${esc(s)}</button>`).join("")}</div>
+      <label style="font-weight:600;display:grid;gap:6px">Observações<textarea id="obs" placeholder="Anote o que conversaram, objeções, próximo passo…">${esc(r.observacoes)}</textarea></label>
+      <div class="saved" id="saved"></div>
+      <div class="qa">${QA.map(q => `<div><span>${esc(q[0])}</span><p>${esc(q[1])}</p></div>`).join("")}</div>`;
+    $("drawer").classList.add("on");
+  }
+
+  document.addEventListener("click", async e => {
+    const t = e.target.closest("[data-open],[data-call],[data-st],[data-s],#close");
+    if (!t) { if (e.target.id === "drawer") { $("drawer").classList.remove("on"); open = null; } return; }
+    if (t.id === "close") { $("drawer").classList.remove("on"); open = null; return; }
+    if (t.dataset.open) { detail(rows.find(r => r.id === t.dataset.open)); return; }
+    if (t.dataset.call) { called(t.dataset.call).then(() => { if (open) detail(rows.find(r => r.id === open), true); }); return; }
+    if (t.dataset.st) { const r = await patch(open, { status:t.dataset.st, ...(t.dataset.st === "chamado" ? { chamado_em:new Date().toISOString() } : {}) }); detail(r, true); return; }
+    if (t.dataset.s !== undefined) { stFilter = t.dataset.s; render(); }
+  });
+  let tObs;
+  document.addEventListener("input", e => {
+    if (e.target.id === "obs") { $("saved").textContent = "Salvando…"; clearTimeout(tObs); const id = open, v = e.target.value;
+      tObs = setTimeout(async () => { try { await patch(id, { observacoes:v }); $("saved").textContent = "Salvo"; } catch (err) { $("saved").textContent = "Não salvou. Tente de novo."; } }, 800); }
+    if (["q"].includes(e.target.id)) render();
+  });
+  ["fFx","fOrd"].forEach(id => $(id).addEventListener("change", render));
+  $("fSt").addEventListener("change", e => { stFilter = e.target.value; render(); });
+  $("bRef").addEventListener("click", () => load().catch(() => {}));
+  $("bCsv").addEventListener("click", () => {
+    const cols = ["criado_em","nome","whatsapp","email","cidade","momento","oab","area","renda","trava","motivo","agenda","investimento","pontuacao","status","chamado_em","observacoes"];
+    const q = v => '"' + String(v ?? "").replace(/"/g,'""') + '"';
+    const csv = "﻿" + cols.join(";") + "\n" + rows.map(r => cols.map(c => q(r[c])).join(";")).join("\n");
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type:"text/csv;charset=utf-8" }));
+    a.download = "aplicacoes-happy-nation.csv"; a.click();
+  });
+  $("bOut").addEventListener("click", logout); $("bOut2").addEventListener("click", logout);
+  $("fLogin").addEventListener("submit", async e => {
+    e.preventDefault(); $("lErr").textContent = ""; $("lBtn").textContent = "Entrando…";
+    try { await auth({ email:$("lEmail").value.trim(), password:$("lPass").value }, "password"); await enter(); }
+    catch (err) { $("lErr").textContent = /invalid/i.test(err.message) ? "E-mail ou senha incorretos." : "Não foi possível entrar agora."; }
+    finally { $("lBtn").textContent = "Entrar"; }
+  });
+
+  if (!C.SUPABASE_URL || !C.SUPABASE_ANON_KEY) { $("lErr").textContent = "Painel ainda não configurado (faltam os dados do Supabase em config.js)."; }
+  try { S = JSON.parse(localStorage.getItem("hn_sess") || "null"); } catch (e) {}
+  if (S) enter().catch(() => logout()); else show("vLogin");
+  setInterval(() => { if (S && !$("vApp").classList.contains("hide") && document.visibilityState === "visible") load().catch(() => {}); }, 60000);
+}
+</script>
+</body>
+</html>
