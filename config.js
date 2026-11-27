@@ -1,6 +1,4 @@
-// Preencha com os dados do Supabase (Project Settings > API).
-// A chave "anon public" é pública por natureza; a segurança está nas regras (RLS) do banco.
 window.HN_CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: ""
+  SUPABASE_URL: "https://xtekofetabdgqdikruup.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_wUMJliup_CZ7XpQsU2GEYA_mSTTq-ot"
 };

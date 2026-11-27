@@ -601,7 +601,7 @@ input,select,textarea{border-radius:12px!important}
     try {
       const r = await fetch(CONFIG.SUPABASE_URL + "/rest/v1/rpc/enviar_aplicacao", {
         method: "POST",
-        headers: { "Content-Type": "application/json", apikey: CONFIG.SUPABASE_ANON_KEY, Authorization: "Bearer " + CONFIG.SUPABASE_ANON_KEY },
+        headers: Object.assign({ "Content-Type": "application/json", apikey: CONFIG.SUPABASE_ANON_KEY }, CONFIG.SUPABASE_ANON_KEY.startsWith("sb_") ? {} : { Authorization: "Bearer " + CONFIG.SUPABASE_ANON_KEY }),
         body: JSON.stringify({ dados })
       });
       if (!r.ok) throw new Error(await r.text());
