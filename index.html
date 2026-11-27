@@ -41,7 +41,9 @@ p{margin:0}
 .shot .behind{position:absolute;left:0;right:0;text-align:center;font-family:"Cormorant Garamond",serif;font-weight:600;line-height:.8;color:var(--gold2);letter-spacing:-.02em;white-space:nowrap}
 
 /* HERO */
-.hero{background:var(--ink);color:var(--bone)}
+.hero{background:var(--ink);color:var(--bone);position:relative}
+.adm{position:absolute;top:18px;right:max(5vw,20px);z-index:5;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;color:rgba(244,242,238,.38);transition:color .2s,background .2s}
+.adm:hover{color:#D9B66C;background:rgba(255,255,255,.06)}
 .hero .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);max-width:1120px;margin:0 auto;align-items:center;gap:56px;padding:40px max(5vw,20px)}
 .hero .logo{width:240px;height:auto;display:block;margin-bottom:56px}
 .hero h1{font-size:clamp(44px,6vw,68px)}
@@ -320,6 +322,7 @@ input,select,textarea{border-radius:12px!important}
 <body>
 
 <header class="hero">
+  <a class="adm" href="admin.html" aria-label="Área do administrador" title="Área do administrador"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a>
   <div class="grid">
     <div class="txt" style="order:0">
       <img class="logo" src="img/happy.png" alt="Happy Nation — Criminal Experience">

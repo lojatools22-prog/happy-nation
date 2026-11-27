@@ -87,7 +87,7 @@ main{max-width:1200px;margin:0 auto;padding:24px max(4vw,16px) 64px}
     <img src="img/happy.png" alt="Happy Nation" style="filter:brightness(.45) sepia(1) saturate(2)">
     <h1>Painel do Bryan</h1>
     <p>Entre para ver as aplicações da Happy Nation.</p>
-    <label>E-mail<input id="lEmail" type="email" autocomplete="username" required></label>
+    <label>Usuário<input id="lEmail" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
     <label>Senha<input id="lPass" type="password" autocomplete="current-password" required></label>
     <button class="btn gold" style="width:100%" type="submit" id="lBtn">Entrar</button>
     <div class="err" id="lErr"></div>
@@ -233,7 +233,7 @@ main{max-width:1200px;margin:0 auto;padding:24px max(4vw,16px) 64px}
   $("bOut").addEventListener("click", logout); $("bOut2").addEventListener("click", logout);
   $("fLogin").addEventListener("submit", async e => {
     e.preventDefault(); $("lErr").textContent = ""; $("lBtn").textContent = "Entrando…";
-    try { await auth({ email:$("lEmail").value.trim(), password:$("lPass").value }, "password"); await enter(); }
+    try { await auth({ email:(u=>u.includes("@")?u:u+"@happynationcriminal.com.br")($("lEmail").value.trim().toLowerCase()), password:$("lPass").value }, "password"); await enter(); }
     catch (err) { $("lErr").textContent = /invalid/i.test(err.message) ? "E-mail ou senha incorretos." : "Não foi possível entrar agora."; }
     finally { $("lBtn").textContent = "Entrar"; }
   });
